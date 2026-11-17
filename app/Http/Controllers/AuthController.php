@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Mail\BemVindoMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,6 +30,8 @@ class AuthController extends Controller
             'telefone_advg' => $dados['telefone_advg'],
             'password' => Hash::make($dados['password']),
         ]);
+        Mail::to($email_advg->email)
+        ->send(new BemVindoMail($nome_advg->name));
 
         return redirect()->route('home')
             ->with('sucesso', 'Produto criado com sucesso!');
