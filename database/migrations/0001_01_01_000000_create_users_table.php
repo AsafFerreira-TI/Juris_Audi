@@ -45,6 +45,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Apague primeiro as tabelas que dependem de users
+        Schema::dropIfExists('codigos_2f');
+
+        // Agora o Postgres vai deixar apagar a users livremente
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

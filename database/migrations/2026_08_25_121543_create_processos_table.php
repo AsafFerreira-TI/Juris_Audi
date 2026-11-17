@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('id_cliente')->constrained('clientes')->cascadeOnDelete();
-            $table->foreignId('id_advg')->constrained('users')->cascadeOnDelete();
-            $table->string('num_processo');
+            $table->foreignId('id_advg')->constrained('users')->onDelete('cascade');            $table->string('num_processo');
             $table->string('tipo_processo');
             $table->string('desc_processo');
             $table->date('data_abertura_processo');

@@ -27,6 +27,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function processos()
+    {
+        return $this->hasMany(Processo::class, 'id_advg');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

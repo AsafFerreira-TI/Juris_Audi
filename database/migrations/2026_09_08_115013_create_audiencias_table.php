@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('id_processo')->constrained('processos')->cascadeOnDelete();
+            $table->foreignId('id_advg')->constrained('users')->cascadeOnDelete();
             $table->dateTime('data_audiencia');
             $table->string('tipo_audiencia');
             $table->string('local_audiencia');

@@ -25,4 +25,9 @@ class Processo extends Model
     {
         return $this->hasMany(Audiencias::class, 'id_processo');
     }
+
+    public function advogado()
+    {
+        return $this->belongsTo(User::class, 'id_advg');
+    }
 }

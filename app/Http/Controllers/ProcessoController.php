@@ -8,9 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ProcessoController extends Controller
 {
+    /**
+     * Centraliza a busca apenas para os processos do advogado logado.
+     */
+    private function meusProcessos()
+    {
+        return Processo::where('id_advg', Auth::id());
+    }
+
     public function index(Request $request)
     {
-        $query = Processo::query();
+        $query = $this->meusProcessos();
 
         if ($request->filled('busca')) {
             $busca = $request->busca;
@@ -45,10 +53,11 @@ class ProcessoController extends Controller
 
         $processos = $query->paginate(10)->withQueryString();
 
-        $totalProcessos = Processo::count();
-        $emAndamento    = Processo::where('status_processo', 'andamento')->count();
-        $concluidos     = Processo::where('status_processo', 'concluido')->count();
-        $vencidos       = Processo::where('status_processo', 'vencido')->count();
+        // Contadores filtrados apenas para o advogado logado
+        $totalProcessos = $this->meusProcessos()->count();
+        $emAndamento    = $this->meusProcessos()->where('status_processo', 'andamento')->count();
+        $concluidos     = $this->meusProcessos()->where('status_processo', 'concluido')->count();
+        $vencidos       = $this->meusProcessos()->where('status_processo', 'vencido')->count();
 
         return view('processos.index', compact(
             'processos',
@@ -117,20 +126,22 @@ class ProcessoController extends Controller
 
     public function show(string $id)
     {
-        $processo = Processo::findOrFail($id);
+        $processo = $this->meusProcessos()->findOrFail($id);
 
         return view('processos.show', compact('processo'));
     }
 
     public function edit(string $id)
     {
-        $processo = Processo::findOrFail($id);
+        $processo = $this->meusProcessos()->findOrFail($id);
 
         return view('processos.edit', compact('processo'));
     }
 
     public function update(Request $request, string $id)
     {
+        $processo = $this->meusProcessos()->findOrFail($id);
+
         if ($request->filled('num_processo')) {
             $request->merge([
                 'num_processo' => preg_replace('/\D/', '', $request->num_processo),
@@ -138,7 +149,7 @@ class ProcessoController extends Controller
         }
 
         $dados = $request->validate([
-            'num_processo'           => 'required|string|max:100',
+            'num_processo'           => 'required|string|max:100|unique:processos,num_processo,' . $processo->id,
             'id_cliente'             => 'required|string|max:100',
             'tipo_processo'          => 'required|string|max:100',
             'desc_processo'          => 'nullable|string|max:500',
@@ -149,7 +160,6 @@ class ProcessoController extends Controller
             'tribunal_processo'      => 'nullable|string|max:500',
         ]);
 
-        $processo = Processo::findOrFail($id);
         $processo->update($dados);
 
         return redirect()
@@ -163,7 +173,7 @@ class ProcessoController extends Controller
 
     public function destroy(string $id)
     {
-        $processo = Processo::findOrFail($id);
+        $processo = $this->meusProcessos()->findOrFail($id);
         $processo->delete();
 
         return redirect()
