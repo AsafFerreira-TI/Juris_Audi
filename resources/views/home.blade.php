@@ -13,7 +13,7 @@
 
     <div class="hero-content">
         <h1>
-            No <span>Juris Control</span> você tem total controle do seu escritório
+            No <span>Juris Audi</span> você tem total controle do seu escritório
         </h1>
 
         <p>
@@ -73,7 +73,7 @@
 
         <p>
             Centralize todas as informações do seu escritório em um único lugar.
-            Com o Juris Control, você ganha mais eficiência no dia a dia,
+            Com o Juris Audi, você ganha mais eficiência no dia a dia,
             reduz erros e garante maior controle sobre cada etapa do seu serviço.
         </p>
 
@@ -101,7 +101,7 @@
         <p>
             Ao organizar seus processos com mais eficiência e rapidez, você reduz
             perdas de prazo e aumenta a produtividade do seu escritório. Com o
-            Juris Control, a agilidade na gestão permite atender mais demandas,
+            Juris Audi, a agilidade na gestão permite atender mais demandas,
             melhorar a performance da equipe e, consequentemente, alcançar um
             maior retorno financeiro.
         </p>
@@ -150,6 +150,7 @@
         </div>
     </div>
 </section>
+<!--
 
 <section class="testimonials-modern">
     <h2>O que nossos clientes dizem</h2>
@@ -157,7 +158,7 @@
     <div class="testimonial-grid">
         <div class="testimonial-card">
             <p>
-                O Juris Control transformou a forma como gerenciamos nosso escritório.
+                O Juris Audi transformou a forma como gerenciamos nosso escritório.
                 Muito mais organização e eficiência.
             </p>
             <span class="testimonial-author">— Ana Paula, Advogada</span>
@@ -183,6 +184,7 @@
         </div>
     </div>
 </section>
+-->
 
 <section class="cta-section">
     <div>

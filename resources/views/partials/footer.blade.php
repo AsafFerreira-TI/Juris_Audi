@@ -11,7 +11,7 @@
           </div>
           <div>
             <h5 class="fw-bold mb-1 text-white">Pronto para transformar a gestão do seu escritório?</h5>
-            <p class="mb-0 text-secondary fs-6">Agende uma demonstração gratuita e veja como o Juris Control pode fazer a diferença.</p>
+            <p class="mb-0 text-secondary fs-6">Agende uma demonstração gratuita e veja como o Juris Audi pode fazer a diferença.</p>
           </div>
         </div>
         <div class="col-md-4 text-md-end">
@@ -28,11 +28,11 @@
       <div class="col-lg-3 col-md-6">
         <div class="d-flex align-items-center mb-3">
           <div class="border border-warning border-2 rounded-circle p-2 me-2 d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-          <img src="{{ asset('img/JurisControl.png') }}" alt="Juris Control" class="img-full rounded-circle" width="165%">
+          <img src="{{ asset('img/JurisControl.png') }}" alt="Juris Audi" class="img-full rounded-circle" width="165%">
           </div>
 
-         
-          <span class="fs-4 fw-bold fst-italic text-white"><span class="fw-normal">JURIS</span>CONTROL</span>
+
+          <span class="fs-4 fw-bold fst-italic text-white"><span class="fw-normal">JURIS</span>AUDI</span>
 
         </div>
         <p class="text-secondary small">
@@ -77,7 +77,7 @@
             <i class="bi bi-telephone text-warning"></i> (11) 99999-9999
           </li>
           <li class="d-flex align-items-center gap-2">
-            <i class="bi bi-envelope text-warning"></i> contato@juriscontrol.com.br
+            <i class="bi bi-envelope text-warning"></i> contato@jurisaudi.com.br
           </li>
           <li class="d-flex align-items-start gap-2">
             <i class="bi bi-geo-alt text-warning mt-1"></i>

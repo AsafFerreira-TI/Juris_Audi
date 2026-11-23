@@ -24,7 +24,7 @@
                 class="navbar-brand fs-4 fw-bold fst-italic tracking-wide text-white m-0"
                 href="{{ route('home') }}"
             >
-                <span class="fw-normal">JURIS </span>CONTROL
+                <span class="fw-normal">JURIS </span>AUDI
             </a>
 
         </div>
@@ -198,7 +198,7 @@
             href="{{ route('home') }}"
         >
             <span class="fw-light">JURIS</span>
-            CONTROL
+            AUDI
         </a>
 
         {{-- BOTÃO FECHAR --}}
