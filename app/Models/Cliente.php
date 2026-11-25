@@ -9,6 +9,10 @@ class Cliente extends Model
     protected $table = "cliente";
 
     protected $fillable = [
-
+        'id_advg',
+        'nome_cli',
+        'cpf_cnpj_cli',
+        'tel_cli',
+        'email_cli'
     ];
 }

@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_advg')->constrained('users')->cascadeOnDelete();
             $table->string('nome_cli');
             $table->string('cpf_cnpj_cli');
-            $table->string('rg_cli');
-            $table->date('nasc_cli')->nullable();
             $table->string('tel_cli');
             $table->string('email_cli');
             $table->timestamps();
