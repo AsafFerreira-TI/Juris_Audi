@@ -15,4 +15,9 @@ class Cliente extends Model
         'tel_cli',
         'email_cli'
     ];
+    
+    public function advogado()
+    {
+        return $this->belongsTo(User::class, 'id_advg');
+    }
 }

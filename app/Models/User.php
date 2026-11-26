@@ -32,6 +32,11 @@ class User extends Authenticatable
         return $this->hasMany(Processo::class, 'id_advg');
     }
 
+    public function clientes()
+    {
+        return $this->hasMany(Cliente::class, 'id_advg');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
